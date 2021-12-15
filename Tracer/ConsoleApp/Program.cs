@@ -90,8 +90,6 @@ namespace ConsoleApp
 
             fileWriter.changeFileName("example.xml");
             fileWriter.Write(xml);
-
-            
         }
     }
 }
