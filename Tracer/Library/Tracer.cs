@@ -9,13 +9,11 @@ namespace Library
 {
     public class Tracer : ITracer
     {
-
         private ConcurrentDictionary<int, ThreadTracer> threadsTrace;
-
 
         public Tracer()
         {
-            this.threadsTrace = new ConcurrentDictionary<int, ThreadTracer>();
+            threadsTrace = new ConcurrentDictionary<int, ThreadTracer>();
         }
 
         public void StartTrace()

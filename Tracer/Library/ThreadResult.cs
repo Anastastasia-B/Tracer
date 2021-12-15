@@ -15,8 +15,8 @@ namespace Library
         public ThreadResult(int id)
         {
             this.id = id;
-            this.time = 0;
-            this.methodsResult = new List<MethodResult>();
+            time = 0;
+            methodsResult = new List<MethodResult>();
         }
 
         public void addMethod(MethodResult methodResult)

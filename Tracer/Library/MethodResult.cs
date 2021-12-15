@@ -19,13 +19,13 @@ namespace Library
         {
             this.name = name;
             this.className = className;
-            this.time = 0;
-            this.childMethodsResult = new List<MethodResult>();
+            time = 0;
+            childMethodsResult = new List<MethodResult>();
         }
 
         public void addChildMethod(MethodResult childMethod)
         {
-            this.childMethodsResult.Add(childMethod);
+            childMethodsResult.Add(childMethod);
         }
 
         public void setTime(double time)

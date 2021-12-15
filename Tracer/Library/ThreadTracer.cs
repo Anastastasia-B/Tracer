@@ -8,14 +8,13 @@ namespace Library
 {
     class ThreadTracer
     {
-
         private ThreadResult curInfo;
         private Stack<MethodTracer> callStack;
 
         public ThreadTracer(int id)
         {
-            this.curInfo = new ThreadResult(id);
-            this.callStack = new Stack<MethodTracer>();
+            curInfo = new ThreadResult(id);
+            callStack = new Stack<MethodTracer>();
         }
 
         public void StartTrace()
@@ -43,7 +42,6 @@ namespace Library
                 curInfo.addTime(method.time);
                 curInfo.addMethod(method);
             }
-
         }
 
         public ThreadResult GetTraceResult()
