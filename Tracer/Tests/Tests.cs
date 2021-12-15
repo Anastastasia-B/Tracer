@@ -65,5 +65,17 @@ namespace Tests
             var methodTime = result.threadResults[0].methodsResult[0].time;
             Assert.AreEqual(methodTime, time);
         }
+
+        [TestMethod]
+        public void TestMethodAndClassName()
+        {
+            tracer.StartTrace();
+            tracer.StopTrace();
+            var result = tracer.GetTraceResult();
+
+            Assert.AreEqual(nameof(TestMethodAndClassName), result.threadResults[0].methodsResult[0].name);
+
+            Assert.AreEqual(nameof(Tests), result.threadResults[0].methodsResult[0].className);
+        }
     }
 }
