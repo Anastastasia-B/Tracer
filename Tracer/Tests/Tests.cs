@@ -54,5 +54,16 @@ namespace Tests
             var methodsCount = result.threadResults[0].methodsResult.Count;
             Assert.AreEqual(2, methodsCount);
         }
+
+        [TestMethod]
+        public void TestThreadAndSingleMethodTime()
+        {
+            TestMethod();
+
+            var result = tracer.GetTraceResult();
+            var time = result.threadResults[0].time;
+            var methodTime = result.threadResults[0].methodsResult[0].time;
+            Assert.AreEqual(methodTime, time);
+        }
     }
 }
