@@ -26,7 +26,7 @@ namespace ConsoleApp
                 tracer.StopTrace();
             }
 
-            public void SomeMethod2()
+            public void SomeOtherMethod()
             {
                 tracer.StartTrace();
                 SomeMethod();
@@ -48,11 +48,11 @@ namespace ConsoleApp
             {
                 tracer.StartTrace();
                 Thread.Sleep(300);
-                InnerMethod2();
+                OtherInnerMethod();
                 tracer.StopTrace();
             }
 
-            public void InnerMethod2()
+            public void OtherInnerMethod()
             {
                 tracer.StartTrace();
                 Thread.Sleep(50);
@@ -69,7 +69,7 @@ namespace ConsoleApp
             thread.Start();
             thread.Join();
 
-            thread = new Thread(foo.SomeMethod2);
+            thread = new Thread(foo.SomeOtherMethod);
             thread.Start();
             thread.Join();
 
