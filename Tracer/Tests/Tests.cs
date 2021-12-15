@@ -43,5 +43,16 @@ namespace Tests
 
             Assert.AreEqual(2, result.threadResults.Count);
         }
+
+        [TestMethod]
+        public void TestMethodCount()
+        {
+            TestMethod();
+            TestMethod();
+
+            var result = tracer.GetTraceResult();
+            var methodsCount = result.threadResults[0].methodsResult.Count;
+            Assert.AreEqual(2, methodsCount);
+        }
     }
 }
