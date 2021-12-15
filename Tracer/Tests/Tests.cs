@@ -28,5 +28,20 @@ namespace Tests
             var result = tracer.GetTraceResult();
             Assert.AreEqual(Thread.CurrentThread.ManagedThreadId, result.threadResults[0].id);
         }
+
+        [TestMethod]
+        public void TestThreadCount()
+        {
+            var thread = new Thread(new ThreadStart(TestMethod));
+            thread.Start();
+            thread.Join();
+            thread = new Thread(new ThreadStart(TestMethod));
+            thread.Start();
+            thread.Join();
+
+            var result = tracer.GetTraceResult();
+
+            Assert.AreEqual(2, result.threadResults.Count);
+        }
     }
 }
